@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { movies as allMovies } from './data/movies';
 import MovieList from '../src/components/MovieList';
+import Header from "../src/components/Header";
 import './index.css';
 
 const App = () => {
@@ -11,7 +12,9 @@ const App = () => {
   );
 
   return (
-    <div className="app">і
+    <>
+    <Header/>
+    <div className="app">
       <input
         type="text"
         placeholder="Пошук за назвою..."
@@ -21,6 +24,7 @@ const App = () => {
       />
       <MovieList movies={filteredMovies} />
     </div>
+    </>
   );
 };
 

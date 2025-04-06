@@ -1,0 +1,33 @@
+.header {
+    background: linear-gradient(90deg, #311744, #42246b);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fefefe;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1100;
+    position: sticky;
+    top: 0;
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #d9b3ff;
+  }
+  
+  .nav a {
+    margin-left: 20px;
+    color: #e0cfff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #d9b3ff;
+  }
+  
