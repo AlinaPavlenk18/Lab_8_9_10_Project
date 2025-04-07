@@ -24,33 +24,34 @@ const App = () => {
   };
 
   return (
-    <>
+  <>
     <Header/>
     <div className="app">
       {!sidebarOpen && (
-          <button className="toggle-sidebar-btn" onClick={() => setSidebarOpen(true)}>
-            ☰ Фільтри
-          </button>
-        )}
+        <button className="toggle-sidebar-btn" onClick={() => setSidebarOpen(true)}>
+          ☰ Фільтри
+        </button>
+      )}
+      {sidebarOpen && <div className="overlay" onClick={() => setSidebarOpen(false)}></div>}
 
-        {sidebarOpen && <div className="overlay" onClick={() => setSidebarOpen(false)}></div>}
+      <Sidebar
+        isOpen={sidebarOpen}
+        genres={genres}
+        selectedGenre={genre}
+        onGenreChange={handleGenreChange}
+      />
 
-        <Sidebar
-          isOpen={sidebarOpen}
-          genres={genres}
-          selectedGenre={genre}
-          onGenreChange={handleGenreChange}
-        />
-      <input
-        type="text"
+      <div className="content"> 
+        <input
+        className="search-input" type="text"
         placeholder="Пошук за назвою..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="search-input"
       />
       <MovieList movies={filteredMovies} />
+      </div>
     </div>
-    </>
+  </>
   );
 };
 
