@@ -10,7 +10,7 @@
     box-shadow: 3px 0 12px rgba(0, 0, 0, 0.5);
     transition: left 0.4s ease, opacity 0.4s ease;
     opacity: 0;
-    z-index: 1000;
+    z-index: 1101;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
   }
   
@@ -68,3 +68,40 @@
       opacity: 1;
     }
   }
+  /* Адаптивність для планшетів */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 250px; /* Трохи менша ширина для планшетів */
+    padding: 20px 15px;
+  }
+  
+  .sidebar h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar li {
+    padding: 8px;
+    margin-bottom: 6px;
+  }
+}
+
+/*Адаптивність для мобільних телефонів */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 85%; /* На малих екранах займає більшу частину екрану */
+    max-width: 280px;
+    left: -100%; /* Повністю за межами екрану */
+    padding: 15px 12px;
+  }
+  
+  .sidebar h3 {
+    font-size: 17px;
+    padding-bottom: 6px;
+  }
+  
+  .sidebar li {
+    padding: 8px 6px;
+    font-size: 15px;
+  }
+}
