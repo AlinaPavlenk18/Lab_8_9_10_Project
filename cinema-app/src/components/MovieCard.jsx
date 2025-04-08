@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+import MovieModal from './MovieModal';
 
-const MovieCard = ({ title, description, genre, date, time, poster, delay}) => {
+const MovieCard = ({ title, description, genre, country, year, date, time, poster, delay}) => {
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   
   useEffect(() => {
     const currentRef = cardRef.current; // зберігаємо поточне значення
@@ -35,17 +37,21 @@ const MovieCard = ({ title, description, genre, date, time, poster, delay}) => {
       <div 
       ref={cardRef}
       className={`movie-card ${isVisible ? 'visible' : ''}`}
-       
+      onClick={() => setShowModal(true)}
       >
         <img src={poster} alt={title} />
         <div className="movie-info">
           <h2>{title}</h2>
-          <p>{description}</p>
-          <p><strong>Жанр:</strong> {genre}</p>
           <p><strong>Дата:</strong> {date}</p>
           <p><strong>Сеанс:</strong> {time}</p>
         </div>
       </div>
+      {showModal && (
+        <MovieModal
+          movie={{ title, description, genre, country, year,date, time, poster }}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </>
     );
   };

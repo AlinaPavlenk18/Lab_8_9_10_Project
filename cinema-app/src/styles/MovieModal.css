@@ -1,0 +1,154 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  /* Додаємо контейнер для модального вікна */
+.movie-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+}
+
+  
+/*.movie-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:  #1f1a2e;
+    color: #e0e1dd;
+    border-radius: 12px;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    height: 80vh; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    animation: scaleIn 0.4s ease;
+    overflow-y: auto;
+    overflow-x: hidden; /* Забороняє горизонтальну прокрутку 
+    animation: scaleIn 0.4s ease;
+  }*/
+.movie-modal {
+  position: relative;
+  background: #1f1a2e;
+  color: #e0e1dd;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  height: 90vh; /* Фіксована висота */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  animation: scaleIn 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+  
+/* Окремий контейнер для прокрутки */
+.modal-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+}
+  /* Щоб вікно не виходило за межі екрана */
+.modal-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+  
+.modal-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+  
+   
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  align-self: flex-end; 
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+  
+
+.modal-poster {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 28px auto 20px auto; /* Центрує + додає відступ знизу */
+  border-radius: 16px; 
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+  
+.modal-poster:hover {
+  transform: scale(1.05) rotateZ(1deg); /*Збільшення і легкий поворот */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6), 0 0 15px #8ecae6; /*Більш інтенсивна тінь + легкий блиск */
+}
+  /* Контент */
+.modal-content {
+  padding: 0 10px;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.movie-details {
+  width: 100%;
+}
+  
+.movie-details h2 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+  
+.movie-details p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+  
+  /* Анімації */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -45%) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
