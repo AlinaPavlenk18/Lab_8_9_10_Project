@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import MovieModal from './MovieModal';
+import { Link } from 'react-router-dom';
 
-const MovieCard = ({ title, description, genre, country, year, date, time, poster, delay}) => {
+const MovieCard = ({ title, description, genre, country, year, date, time, poster, delay, id}) => {
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -44,6 +45,9 @@ const MovieCard = ({ title, description, genre, country, year, date, time, poste
           <h2>{title}</h2>
           <p><strong>Дата:</strong> {date}</p>
           <p><strong>Сеанс:</strong> {time}</p>
+          <div className="book-card-container">
+            <Link to={`/booking/${id}`} className="btn-book-card">Забронювати</Link>
+          </div>
         </div>
       </div>
       {showModal && (
