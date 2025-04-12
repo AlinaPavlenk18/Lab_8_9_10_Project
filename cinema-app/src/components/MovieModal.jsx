@@ -11,9 +11,9 @@ const MovieModal = ({ movie, onClose }) => {
     }
 
     setTimeout(() => {
-      onClose(); // закриваємо модалку
+      onClose(); 
       navigate(`/booking/${movie.id}`); // переходимо на сторінку бронювання
-    }, 300); // чекаємо, поки анімація завершиться
+    }, 300); 
   };
 
   if (!movie) return null;

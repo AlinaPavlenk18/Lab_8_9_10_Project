@@ -18,17 +18,45 @@
     color: #d9b3ff;
   }
   
-  .nav a {
+  .burger {
+    display: none;
+    font-size: 28px;
+    color: #fefefe;
+    cursor: pointer;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  .nav-link {
     margin-left: 20px;
     color: #e0cfff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    position: relative;
+    transition: color 0.3s ease;
   }
   
-  .nav a:hover {
+  .nav-link:hover {
     color: #ffffff;
     text-shadow: 0 0 5px #d9b3ff;
+  }
+  
+  /* Активна вкладка — ПІДКРЕСЛЕННЯ */
+  .nav-link.active {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  .nav-link.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #d9b3ff;
+    border-radius: 2px;
+    margin-top: 6px;
+    animation: slideIn 0.3s ease-in-out;
   }
 
   @media (max-width: 768px) {
@@ -50,9 +78,12 @@
       display: flex;
     }
   
-    .nav a {
+    .nav-link {
       margin: 10px 0;
       font-size: 18px;
+    }
+    .burger{
+      display: block;
     }
   }
   
