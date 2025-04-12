@@ -104,6 +104,32 @@
   font-size: 16px;
   line-height: 1.5;
 }
+.btn-book-modal {
+  padding: 8px 16px;
+  background: #5c0c96;
+  border:#1b0f2b 2px solid;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-book-modal:hover {
+  transform: scale(1.05);
+  background-color: #8e44ad;
+}
+/* Анімація зникнення */
+.movie-modal.fade-out {
+  animation: fadeOutModal 0.3s forwards;
+}
+@keyframes fadeOutModal {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -45%) scale(0.95);
+  }
+}
+
   
   /* Анімації */
   @keyframes fadeIn {

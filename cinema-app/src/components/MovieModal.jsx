@@ -1,6 +1,21 @@
 import '../styles/MovieModal.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const MovieModal = ({ movie, onClose }) => {
+  const navigate = useNavigate();
+  const handleBook = () => {
+    const modal = document.querySelector('.movie-modal');
+    if (modal) {
+      modal.classList.add('fade-out'); // додаємо клас для анімації
+    }
+
+    setTimeout(() => {
+      onClose(); // закриваємо модалку
+      navigate(`/booking/${movie.id}`); // переходимо на сторінку бронювання
+    }, 300); // чекаємо, поки анімація завершиться
+  };
+
   if (!movie) return null;
 
   return (
@@ -19,6 +34,9 @@ const MovieModal = ({ movie, onClose }) => {
                 <p><strong>Рік:</strong> {movie.year}</p>
                 <p><strong>Час сеансу:</strong> {movie.time}</p>
                 <p><strong>Опис:</strong> {movie.description}</p>
+                <button className="btn-book-modal" onClick={handleBook}>
+                  Забронювати
+                </button>
               </div>
             </div>
           </div>

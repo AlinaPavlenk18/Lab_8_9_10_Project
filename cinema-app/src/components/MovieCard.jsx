@@ -51,10 +51,13 @@ const MovieCard = ({ title, description, genre, country, year, date, time, poste
         </div>
       </div>
       {showModal && (
-        <MovieModal
-          movie={{ title, description, genre, country, year,date, time, poster }}
-          onClose={() => setShowModal(false)}
-        />
+      <MovieModal 
+        movie={{ title, description, genre, country, year,date, time, poster, id }}
+        onClose={() => setShowModal(false)}>
+        <Link to={`/booking/${id}`} className="btn-book">Забронювати</Link>
+      </MovieModal>
+        
+          
       )}
     </>
     );
