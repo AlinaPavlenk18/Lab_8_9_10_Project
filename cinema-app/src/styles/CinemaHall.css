@@ -26,4 +26,30 @@
   .seat:hover {
     background-color: #219ebc;
   }
+  /* Адаптивність */
+@media (max-width: 768px) {
+  .hall-grid {
+    grid-template-columns: repeat(5, 40px);
+    gap: 8px;
+  }
+
+  .seat {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hall-grid {
+    grid-template-columns: repeat(4, 36px);
+    gap: 6px;
+  }
+
+  .seat {
+    width: 34px;
+    height: 34px;
+    font-size: 11px;
+  }
+}
   

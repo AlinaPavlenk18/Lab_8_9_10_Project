@@ -243,6 +243,21 @@ body {
     font-size: 14px;
     padding: 8px 12px;
   }
+  .booking-page {
+    padding: 40px;
+  }
+
+  .booking-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .booking-page h2 {
+    font-size: 1.2rem;
+  }
+
+  .booking-page select {
+    width: 90%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -256,5 +271,20 @@ body {
 
   .movie-card img {
     height: 220px;
+  }
+  .booking-page {
+    padding: 40px;
+  }
+
+  .booking-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .booking-page h2 {
+    font-size: 1.2rem;
+  }
+
+  .booking-page select {
+    width: 80%;
   }
 }

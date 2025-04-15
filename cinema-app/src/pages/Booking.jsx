@@ -25,7 +25,7 @@ const Booking = () => {
         <>
           <p style={{ fontSize: "18px" }}>Оберіть фільм зі списку:</p>
           <select onChange={handleSelect} defaultValue="">
-            <option value="" disabled>— Оберіть фільм —</option>
+            <option value="" disabled>Оберіть фільм</option>
             {movies.map((movie) => (
               <option key={movie.id} value={movie.id}>
                 {movie.title}
