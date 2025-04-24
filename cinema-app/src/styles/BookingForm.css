@@ -1,0 +1,51 @@
+.booking-form {
+    background: #2b1d42;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    color: #fff;
+    max-width: 400px;
+    margin: 30px auto;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .booking-form input {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    background: #413263;
+    color: #fff;
+  }
+  
+  .booking-form input::placeholder {
+    color: #ccc;
+  }
+  
+  .error {
+    color: #ff6b6b;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  
+  .confirm-btn {
+    background-color: #6a0dad;
+    color: #fff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #8e44ad;
+  }
+  
