@@ -25,11 +25,11 @@ const Header = () => {
         </NavLink>
 
         <NavLink
-          to="/schedule"
+          to="/popular"
           className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
           onClick={closeMenu}  
         >
-          Розклад
+          Статистика
         </NavLink>
 
         <NavLink

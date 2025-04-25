@@ -1,0 +1,86 @@
+.popular-page {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #1b0f2b;
+    color: #f0eaff;
+  }
+  
+  .popular-page h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #d9b3ff;
+    text-shadow: 0 0 10px #8a2be2;
+  }
+  
+  .popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .popular-card {
+    background: linear-gradient(145deg, #311744, #42246b);
+    border-radius: 16px;
+    width: 240px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .popular-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7), 0 0 20px #9a68df;
+  }
+  
+  
+  /* Додатковий підсвіт при наведенні */
+  .popular-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+  }
+  
+  .popular-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .popular-card .rank {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #9a68df;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 0 8px #00000066;
+  }
+  
+  .popular-card .info {
+    padding: 15px;
+  }
+  
+  .popular-card .info h3 {
+    margin: 0 0 10px;
+    color: #fff;
+  }
+  
+  .popular-card .info p {
+    color: #ccc;
+    font-size: 14px;
+  }
