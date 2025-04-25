@@ -37,14 +37,26 @@ const BookingForm = ({ selectedSeats, onSuccess }) => {
       }
       if (validate()) {
         BookingService.saveBooking(id, { name, phone, email }, selectedSeats);
-        toast.success('Бронювання успішно збережено!');
+        toast.success('🎉 Бронювання успішно збережено!', {
+            style: {
+              background: '#4B2C77',
+              color: '#fff',
+            },
+            icon: '✅',
+        });
         setName('');
         setPhone('');
         setEmail('');
         if (onSuccess) onSuccess();
       } else {
-        toast.error('Будь ласка, заповніть всі поля коректно');
-      }
+        toast.error('Будь ласка, заповніть всі поля коректно', {
+            style: {
+              background: '#6A1B9A',
+              color: '#fff',
+            },
+            icon: '⚠️'
+            });
+        }
     };
   
     return (
