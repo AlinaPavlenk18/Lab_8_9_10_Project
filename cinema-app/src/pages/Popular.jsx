@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
-import { BookingService } from '../services/BookingService';
+import { useNavigate } from 'react-router-dom';
 import { movies } from '../data/movies';
-import '../styles/Popular.css';
+import MovieModal from '../components/MovieModal';
+import '../styles//Popular.css';
 
 const Popular = () => {
   const [topMovies, setTopMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const allBookings = JSON.parse(localStorage.getItem('bookings')) || {};
@@ -25,12 +28,20 @@ const Popular = () => {
     setTopMovies(sorted);
   }, []);
 
+  const handleBookNow = (id) => {
+    document.querySelector('.movie-modal')?.classList.add('fade-out');
+    setTimeout(() => {
+      setSelectedMovie(null);
+      navigate(`/booking/${id}`);
+    }, 300);
+  };
+
   return (
     <div className="popular-page">
-      <h1>Найпопулярніші фільми</h1>
+      <h1> Найпопулярніші фільми</h1>
       <div className="popular-list">
         {topMovies.map((movie, index) => (
-          <div key={movie.id} className="popular-card">
+          <div key={movie.id} className="popular-card" onClick={() => setSelectedMovie(movie)}>
             <span className="rank">#{index + 1}</span>
             <img src={movie.poster} alt={movie.title} />
             <div className="info">
@@ -40,8 +51,20 @@ const Popular = () => {
           </div>
         ))}
       </div>
+
+      {selectedMovie && (
+        <MovieModal
+          movie={selectedMovie}
+          onClose={() => setSelectedMovie(null)}
+        >
+          <button className="book-now-btn" onClick={() => handleBookNow(selectedMovie.id)}>
+             Забронювати
+          </button>
+        </MovieModal>
+      )}
     </div>
   );
 };
 
 export default Popular;
+
