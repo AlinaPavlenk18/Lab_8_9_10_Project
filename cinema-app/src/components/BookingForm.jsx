@@ -15,15 +15,24 @@ const BookingForm = ({ selectedSeats, onSuccess }) => {
   
     const validate = () => {
       const newErrors = {};
-      if (!name.trim()) newErrors.name = 'Ім’я обов’язкове';
-      if (!phone.trim()){ newErrors.phone = 'Телефон обов’язковий';
-      } else if (!/^\+380\d{9}$/.test(phone)) {
-        newErrors.phone = 'Некоректний формат телефону. Введіть +380 та 9 цифр.';
+      const nameValid = /^[А-Яа-яA-Za-zІіЇїЄєҐґ\s'-]{2,}$/;
+      const phoneValid = /^\+380\d{9}$/;
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+      if (!name.trim() || !nameValid.test(name)) {
+        newErrors.name = 'Введіть дійсне ім’я (мін. 2 букви, без цифр)';
       }
+  
+      if (!phone.trim()) {
+        newErrors.phone = 'Телефон обов’язковий';
+      } else if (!phoneValid.test(phone)) {
+        newErrors.phone = 'Некоректний номер. Формат: +380XXXXXXXXX';
+      }
+  
       if (!email.trim()) {
         newErrors.email = 'Email обов’язковий';
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        newErrors.email = 'Некоректний формат email';
+      } else if (!emailValid.test(email)) {
+        newErrors.email = 'Некоректний email';
       }
       setErrors(newErrors);
       return Object.keys(newErrors).length === 0;

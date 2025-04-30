@@ -121,6 +121,12 @@ body {
   outline: none;
   box-shadow: 0 0 8px #b983ff;
 }
+.booking-page h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #d9b3ff;
+  text-shadow: 0 0 10px #8a2be2;
+}
 
 /* Анімація появи */
 @keyframes slideInFromLeft {
